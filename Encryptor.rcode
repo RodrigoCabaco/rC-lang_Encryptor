@@ -32,10 +32,17 @@ if name:if1; statement:str(encryptOrDecrypt==encrypt); ident:"    ";
        str(finalEncrypted+ )
        str(finalEncrypted+index)
     endFor(for1);
+    clear
+    Write "Encrypted Message:"
+    WriteStr {finalEncrypted}
 endIf(if1);
 
-clear
-Write "Encrypted Message:"
-WriteStr {finalEncrypted}
+
+if name:if2; statement:str(encryptOrDecrypt==decrypt); ident:"    "
+    Write "Decrypting..."
+endIf(if2);
+
+
+
 
 
