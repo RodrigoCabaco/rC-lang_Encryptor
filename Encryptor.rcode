@@ -1,0 +1,41 @@
+import split
+import filestream
+import process
+import 
+
+
+num key >>138
+list(str) "F"
+
+str ALLCHARS >> "abcdefghijklmnopqrstuvwxyz,.ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!-_'|#$&/()= "
+list(str).ToCharArray:ALLCHARS; to:F;
+
+Write "Encrypt or Decrypt: " 
+str encryptOrDecrypt >>$readline
+toLower (encryptOrDecrypt)
+str encrypt >> "encrypt"
+str decrypt >> "decrypt"
+
+if name:if1; statement:str(encryptOrDecrypt==encrypt); ident:"    ";
+    clear
+    Write "Enter Message: "
+    str toEncryptStr >>$readline
+    str finalEncrypted >>""
+    list(str) "toEncrypt"
+    list(str).ToCharArray:toEncryptStr; to:toEncrypt;
+    for i in range:toEncrypt.length; name:for1; ident:"   ";
+       num index >>0
+       getStrListValue(toEncrypt[i])
+       F.IndexOf:toEncrypt[i]; to:index;
+       index*key
+       numToStr(index>>index)
+       str(finalEncrypted+ )
+       str(finalEncrypted+index)
+    endFor(for1);
+endIf(if1);
+
+clear
+Write "Encrypted Message:"
+WriteStr {finalEncrypted}
+
+
